@@ -8,5 +8,6 @@ async function getMovie(id: string) {
 
 export default async function MovieInfo({ id }: { id: string }) {
     const movie = await getMovie(id);
+    console.log(movie);
     return <h6>{JSON.stringify(movie)}</h6>;
 }
