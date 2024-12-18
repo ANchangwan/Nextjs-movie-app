@@ -2,8 +2,8 @@ import Movie from "@/components/movie";
 
 interface IMovieProps {
     id: string;
-    title: string;
-    poster_path: string;
+    title?: string;
+    poster_path?: string;
 }
 
 async function getMovie() {
