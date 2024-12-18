@@ -13,16 +13,21 @@ export default async function MovieInfo({ id }: { id: string }) {
     const movie = await getMovie(id);
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mx-auto w-[80vw] max-w-[1200px] h-[70vh] md:h-[80vh] lg:h-[70vh] rounded-2xl bg-[#13161F] shadow-2xl">
-            <div className="lg:col-span-2 relative items-end">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mx-auto w-[80vw] max-w-[1200px] h-[70vh] md:px-5 md:h-[60vh] lg:h-[70vh] rounded-2xl bg-[#13161F] shadow-2xl">
+            <div className="lg:col-span-2 relative items-end max-lg:mx-auto">
                 <Image
                     width={400}
                     height={700}
                     src={movie.poster_path}
                     alt={movie.title}
-                    className="h-[76vh] lg:h-[76vh] md:h-[60vh] sm:h-[50vh] absolute lg:rounded-2xl lg:-top-20 lg:left-16 md:rounded-lg md:-top-10 md:left-8 sm:rounded-md sm:-top-5 sm:left-4"
+                    className="max-lg:w-screen h-auto max-h-[76vh] rounded-2xl lg:h-[70vh] md:h-[60vh] sm:h-[50vh]
+                    xl:absolute xl:left-20
+                    lg:absolute  lg:-top-20 lg:left-13
+                   md:relative md:-top-20
+                   sm:relative "
                 />
             </div>
+
             <div className="lg:col-span-2 md:col-span-1 sm:col-span-1">
                 <div className="p-4">
                     <h1 className="uppercase">{movie.title}</h1>
