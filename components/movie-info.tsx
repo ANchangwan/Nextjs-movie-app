@@ -22,9 +22,9 @@ export default async function MovieInfo({ id }: { id: string }) {
                     alt={movie.title}
                     className="max-lg:w-screen h-auto max-h-[76vh] rounded-2xl lg:h-[70vh] md:h-[60vh] sm:h-[50vh]
                     xl:absolute xl:left-20
-                    lg:absolute  lg:-top-20 lg:left-13
-                   md:relative md:-top-20
-                   sm:relative "
+                    lg:absolute lg:-top-20 lg:left-13
+                    md:relative md:-top-20
+                    sm:relative "
                 />
             </div>
 
