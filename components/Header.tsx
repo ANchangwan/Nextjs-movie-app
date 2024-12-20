@@ -20,14 +20,14 @@ export default function Header() {
             setIsHidden(false);
         }
     }, [scrollThreshold]);
-
+    // 렌더링 최적화
+    // 1. useCallback을 사용하여 useEffect 렌더링 최적화
     useEffect(() => {
-        if (typeof window !== "undefined") {
-            window.addEventListener('scroll', handleScroll);
-            return () => {
-                window.removeEventListener('scroll', handleScroll);
-            };
-        }
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+
     }, [handleScroll]);
 
     return(
