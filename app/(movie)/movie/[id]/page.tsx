@@ -1,6 +1,6 @@
 import {Suspense} from "react";
-// import MovieVideos from "@/components/movie-videos";
 import MovieInfo from "@/components/movie-info";
+import Profile from "@/components/Profile";
 
 export default async function MovieDetail({
                                        params
@@ -10,12 +10,16 @@ export default async function MovieDetail({
     const {id} = await params;
 
     return <div className="mx-auto">
-        <Suspense fallback={<div>loading...</div>}>
-            <MovieInfo id={id} />
-        </Suspense>
-        {/*<Suspense fallback={<div>loading...</div>}>*/}
-        {/*    <MovieVideos id={id} />*/}
-        {/*</Suspense>*/}
+        <div>
+            <Suspense fallback={<div>loading...</div>}>
+                <MovieInfo id={id}/>
+            </Suspense>
+        </div>
+        <div className="mx-auto w-[80%]">
+            <Suspense fallback={<div>loading...</div>}>
+                <Profile id={id}/>
+            </Suspense>
+        </div>
 
     </div>
 }

@@ -6,6 +6,6 @@ async function getVideos(id: string) {
 
 export default async function MovieVideos({ id }: { id: string }) {
     const videos = await getVideos(id);
-    console.log(videos);
-    return <h6>{}</h6>;
+
+    return <h6>{JSON.stringify(videos)}</h6>;
 }

@@ -19,7 +19,7 @@ export default async function MovieInfo({ id }: { id: string }) {
     const movie = await getMovie(id);
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mx-auto w-[80vw] max-w-[1200px] h-[70vh] md:px-5 md:h-[60vh] lg:h-[70vh] rounded-2xl  sm:bg-[#13161F] shadow-2xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mx-auto w-[80vw] max-w-[1200px] min-h-[70vh] md:px-5 rounded-2xl bg-[#13161F] shadow-2xl  scrollbar-hide">
             <div className="lg:col-span-2 relative items-end max-lg:mx-auto">
                 <Image
                     width={400}
