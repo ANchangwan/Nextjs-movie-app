@@ -2,6 +2,8 @@ import Image from "next/image";
 import StarRating from "@/components/StarRating";
 import Button from "@/components/Button";
 import Gerers from "@/components/Gerers";
+import {Suspense} from "react";
+import Profile from "@/components/Profile";
 
 interface GeresProps {
     id:number;
@@ -43,6 +45,11 @@ export default async function MovieInfo({ id }: { id: string }) {
                     </div>
                 </div>
                 <p className="p-4 text-xl">{movie.overview}</p>
+                <div className="px-4">
+                    <Suspense fallback={<h1>Loading...</h1>}>
+                        <Profile id={id}/>
+                    </Suspense>
+                </div>
                 <div className="flex justify-start gap-2 p-4">
                     <Button className="bg-red-500 text-white" text={"Watch"}/>
                     <Button className="bg-gray-400 text-white" text={"Info"}/>

@@ -1,6 +1,6 @@
 import {Suspense} from "react";
 import MovieInfo from "@/components/movie-info";
-import Profile from "@/components/Profile";
+
 
 export default async function MovieDetail({
                                        params
@@ -15,11 +15,5 @@ export default async function MovieDetail({
                 <MovieInfo id={id}/>
             </Suspense>
         </div>
-        <div className="mx-auto w-[80%]">
-            <Suspense fallback={<div>loading...</div>}>
-                <Profile id={id}/>
-            </Suspense>
-        </div>
-
     </div>
 }

@@ -23,11 +23,12 @@ export default function Header() {
     // 렌더링 최적화
     // 1. useCallback을 사용하여 useEffect 렌더링 최적화
     useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-
+        if (typeof window !== undefined) {
+            window.addEventListener('scroll', handleScroll);
+            return () => {
+                window.removeEventListener('scroll', handleScroll);
+            };
+        }
     }, [handleScroll]);
 
     return(
