@@ -21,14 +21,14 @@ export default async function MovieInfo({ id }: { id: string }) {
     const movie = await getMovie(id);
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mx-auto w-[80vw] max-w-[1200px] min-h-[70vh] md:px-5 rounded-2xl bg-[#13161F] shadow-2xl  scrollbar-hide">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mx-auto max-w-[1200px] w-[80vw] min-h-[70vh] md:px-5 rounded-2xl bg-[#13161F] shadow-2xl  scrollbar-hide">
             <div className="lg:col-span-2 relative items-end max-lg:mx-auto">
                 <Image
                     width={400}
                     height={700}
                     src={movie.poster_path}
                     alt={movie.title}
-                    className="max-lg:w-screen h-auto max-h-[76vh] rounded-2xl lg:h-[70vh] md:h-[60vh] sm:h-[50vh]
+                    className="max-lg:w-screen h-auto max-h-full rounded-2xl lg:h-[100vh] md:h-[60vh] sm:h-[50vh]
                     xl:absolute xl:left-20
                     lg:absolute lg:-top-20 lg:left-13
                     md:relative md:-top-20
@@ -50,7 +50,7 @@ export default async function MovieInfo({ id }: { id: string }) {
                         <Profile id={id}/>
                     </Suspense>
                 </div>
-                <div className="flex justify-start gap-2 p-4">
+                <div className="flex justify-start gap-2 mb-10 pl-4">
                     <Button className="bg-red-500 text-white" text={"Watch"}/>
                     <Button className="bg-gray-400 text-white" text={"Info"}/>
                 </div>

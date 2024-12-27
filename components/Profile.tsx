@@ -26,7 +26,7 @@ export default async function Profile({id}:{id:string}) {
             <Badge className="text-white uppercase font-semibold text-xs rounded-sm" variant="outline">
                 Casting
             </Badge>
-                <Carousel className="w-full flex gap-4 my-3 touch-auto overflow-x-auto py-4">
+                <Carousel className="w-full flex gap-4 my-3 touch-auto overflow-x-auto ">
                     <CarouselContent>
                         {profiles.map((profile:IProfileProps) => profile.profile_path === null ? <NonProfile key={profile.id}/> : (
                             <CarouselItem key={profile.id} className="basis-1/10">
