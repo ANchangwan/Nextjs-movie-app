@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import {redirect} from "next/navigation";
 
 
 interface MovieProps {
@@ -9,6 +10,7 @@ interface MovieProps {
 }
 
 export default function Movie({ id, title, poster_path }: MovieProps) {
+    if(!poster_path) throw new Error("No poster path provided");
     return (
         <div
             className="rounded-2xl bg-gray-800 shadow-2xl hover:z-50 opacity-70 hover:opacity-100 hover:scale-125
@@ -16,9 +18,8 @@ export default function Movie({ id, title, poster_path }: MovieProps) {
         >
             <Link className="flex flex-col justify-center items-center" href={`/movie/${id}`}>
                 <Image width={500} height={500} className="w-full h-3/4 object-cover rounded-2xl"
-                       src={poster_path || "null"} alt={title || "null"}/>
+                       src={poster_path} alt={title || "null"}/>
                 <h1 className="text-center font-semibold py-5 mt-4">{title}</h1>
-
             </Link>
         </div>
     );

@@ -2,6 +2,7 @@ import {Suspense} from "react";
 import MovieInfo from "@/components/movie-info";
 import Loader from "@/components/Loader";
 import MovieVideos from "@/components/movie-videos";
+import SimilarMovie from "@/components/getSimilarMovie";
 
 
 export default async function MovieDetail({
@@ -18,10 +19,17 @@ export default async function MovieDetail({
                     <MovieInfo id={id}/>
                 </Suspense>
             </div>
-            <div className="mt-5">
-                <Suspense fallback={<Loader/>}>
-                    <MovieVideos id={id}/>
-                </Suspense>
+            <div className="mx-auto max-w-[1200px] w-[80vw]">
+                <div className="mt-5">
+                    <Suspense fallback={<Loader/>}>
+                        <MovieVideos id={id}/>
+                    </Suspense>
+                </div>
+                <div className="mt-5">
+                    <Suspense fallback={<Loader/>}>
+                        <SimilarMovie id={id}/>
+                    </Suspense>
+                </div>
             </div>
         </div>
     )
