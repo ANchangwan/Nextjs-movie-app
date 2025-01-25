@@ -10,7 +10,11 @@ interface MovieProps {
 }
 
 export default function Movie({ id, title, poster_path }: MovieProps) {
-    if(!poster_path) throw new Error("No poster path provided");
+
+    if(!poster_path) {
+
+        throw new Error("No poster path provided");
+    }
     return (
         <div
             className="rounded-2xl bg-gray-800 shadow-2xl hover:z-50 opacity-70 hover:opacity-100 hover:scale-125
