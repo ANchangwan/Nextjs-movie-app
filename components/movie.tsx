@@ -1,7 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import {redirect} from "next/navigation";
-
 
 interface MovieProps {
     id: string;
