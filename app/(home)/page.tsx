@@ -18,7 +18,7 @@ export default async function Home() {
     return (
         <div className="w-4/5 mx-auto">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                {datas.map((data: IMovieProps) => (
+                {datas?.map((data: IMovieProps) => (
                         <Movie
                             key={data.id}
                             id={data.id}
