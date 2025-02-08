@@ -11,8 +11,6 @@ interface MovieProps {
 }
 
 export default function Movie({ id, title, poster_path }: MovieProps) {
-
-
     return (
         <div
             className="rounded-2xl bg-gray-800 shadow-2xl hover:z-50 opacity-70 hover:opacity-100 hover:scale-125
@@ -22,7 +20,7 @@ export default function Movie({ id, title, poster_path }: MovieProps) {
                     {poster_path ?
                        <>
                         <Image width={500} height={500} className="w-full h-3/4 object-cover rounded-2xl"
-                            src={poster_path} alt={title || "null"}/>
+                            src={poster_path} alt={title || ""}/>
                         <h1 className="text-center font-semibold py-5 mt-4">{title}</h1>
                        </> : <SkeletonCard/>}
                 </Link>

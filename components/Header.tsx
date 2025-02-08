@@ -38,7 +38,7 @@ export default function Header() {
         z-10 ${isHidden ? "hidden" : ""}
         `}>
             <Link href="/">Home{pathName("/", " 🔥")}</Link>
-            <Link href="/about-us">About {pathname === "/about-us" ? "🔥" : ""}</Link>
+            <Link href="https://github.com/ANchangwan/Nextjs-movie-app">About {pathname === "/about-us" ? "🔥" : ""}</Link>
         </nav>
     )
 }

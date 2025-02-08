@@ -15,7 +15,7 @@ export default async function MovieDetail({
     return (
         <div className="mx-auto w-[80%] ">
             <div>
-                <Suspense fallback={<div>loading...</div>}>
+                <Suspense fallback={<Loader/>}>
                     <MovieInfo id={id}/>
                 </Suspense>
             </div>
