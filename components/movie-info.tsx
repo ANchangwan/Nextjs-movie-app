@@ -10,7 +10,6 @@ interface GeresProps {
     name:string;
 }
 
-
 async function getMovie(id: string) {
     const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/${id}`);
     return response.json();
@@ -28,6 +27,8 @@ export default async function MovieInfo({ id }: { id: string }) {
                     height={700}
                     src={movie.poster_path}
                     alt={movie.title}
+                    placeholder="empty"
+                    priority
                     className="max-lg:w-screen h-auto max-h-full rounded-2xl lg:h-[100vh] md:h-[60vh] sm:h-[50vh]
                     xl:absolute xl:left-20
                     lg:absolute lg:-top-20 lg:left-13

@@ -11,8 +11,7 @@ export default function Header() {
     const pathName = (path:string, ...rest: string[]) =>{
         return pathname === path ? rest : "";
     }
-
-
+    
     const handleScroll = useCallback(() => {
         if (window.scrollY > scrollThreshold) {
             setIsHidden(true);
